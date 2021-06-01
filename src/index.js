@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Design from './components/design'
 import reportWebVitals from './reportWebVitals';
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Design />
   </React.StrictMode>,
   document.getElementById('root')
 );
