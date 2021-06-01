@@ -1,3 +1,7 @@
+# super-duper-fiesta
+
+This is a web application for vivaworker created using react
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
