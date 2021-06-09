@@ -1,14 +1,14 @@
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import HomePage from '../pages/HomePage'
 import ResearchReportsPage from '../pages/ResearchReportsPage'
 import OpinionPieces from '../pages/OpinionPieces'
 import ArticlesWorkshopPapers from '../pages/ArticlesWorkshopPapers'
+import Photographs from '../pages/photographs'
 import NotFound from '../pages/404Page'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './../App.css'
-import { Layout, Space } from 'antd';
+import { Space } from 'antd'
 
-const { Footer } = Layout;
 const AppRouter = (props) => (
 
     <BrowserRouter>
@@ -19,6 +19,7 @@ const AppRouter = (props) => (
                     <Route path='/researchreports' component={ResearchReportsPage}/>
                     <Route path='/opinionpieces' component={OpinionPieces} />
                     <Route path='/articlesworkshops' component={ArticlesWorkshopPapers} />
+                    <Route path='/photographs' component={Photographs} />
                     <Route component={NotFound} />
                 </Switch>
             </Space>

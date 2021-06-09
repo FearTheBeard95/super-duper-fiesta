@@ -21,7 +21,7 @@ const Card = (props) => {
             image='http://vivaworkers.org/sites/default/files/styles/AWP.jpg' 
             title='Articles and Workshop Papers' 
             subtitle='This column contains a range of Herbert"s articles that were published in various journals, newspapers and books.  You will also find several papers presented at workshops, seminars and panel discussions.' 
-            link='/articlesreports'
+            link='/articlesworkshops'
         />
     </MDBRow>
   )
