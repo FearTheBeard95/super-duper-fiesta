@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "vivaworkers",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/carlossibalatani/super-duper-fiesta/amplify/backend/api/vivaworkers/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
