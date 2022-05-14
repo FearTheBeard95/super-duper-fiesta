@@ -11,6 +11,7 @@ import {
 import '@aws-amplify/ui-react/styles.css';
 import './App.css';
 import logo from './logo.svg';
+import React, { Component } from 'react';
 
 const components = {
   Header() {
@@ -237,31 +238,26 @@ const formFields = {
   },
 };
 
-export default function App() {
-  return (
-    <Authenticator
-      formFields={formFields}
-      components={components}
-      hideSignUp={false}
-    >
-      {({ user, signOut }) => (
-        <div className='App'>
-          <header className='App-header'>
-            <img src={logo} className='App-logo' alt='logo' />
-            <p>
-              Hello <code>{user.username}</code>
-            </p>
-            <a
-              className='App-link'
-              href='https://reactjs.org'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
-      )}
-    </Authenticator>
-  );
+export default class App extends Component {
+  render() {
+    console.log(this.state.Documents, 'Documents');
+    return (
+      <Authenticator
+        formFields={formFields}
+        components={components}
+        hideSignUp={false}
+      >
+        {({ user, signOut }) => (
+          <div className='App'>
+            <header className='App-header'>
+              <img src={logo} className='App-logo' alt='logo' />
+              <p>
+                Hello <code>{user.username}</code>
+              </p>
+            </header>
+          </div>
+        )}
+      </Authenticator>
+    );
+  }
 }

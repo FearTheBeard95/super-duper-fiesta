@@ -7,7 +7,26 @@ type Document @model {
   id: ID!
   name: String
   abstract: String!
-  type: String
+  type: DocumentType
   issueDate: String!
   file: String
+}
+
+enum DocumentType {
+  ResearchReports
+  OpinionPieces
+  ArticlesWorkshop
+}
+
+type Gallery @model {
+  id: ID!
+  name: String
+  photos: [Photo!] @hasMany
+}
+
+type Photo @model {
+  id: ID!
+  name: String
+  file: String
+  gallery: Gallery @belongsTo
 }
