@@ -5,13 +5,13 @@ import {
   Text,
   Heading,
   useAuthenticator,
-  Button,
   useTheme,
 } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import './App.css';
 import logo from './logo.svg';
 import React, { Component } from 'react';
+import { Button } from 'antd';
 
 const components = {
   Header() {
@@ -240,7 +240,6 @@ const formFields = {
 
 export default class App extends Component {
   render() {
-    console.log(this.state.Documents, 'Documents');
     return (
       <Authenticator
         formFields={formFields}
@@ -253,6 +252,10 @@ export default class App extends Component {
               <img src={logo} className='App-logo' alt='logo' />
               <p>
                 Hello <code>{user.username}</code>
+                <br />
+                <Button type='primary' onClick={signOut}>
+                  Sign out
+                </Button>
               </p>
             </header>
           </div>

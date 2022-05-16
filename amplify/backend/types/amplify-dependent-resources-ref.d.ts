@@ -16,5 +16,11 @@ export type AmplifyDependentResourcesAttributes = {
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }
+    },
+    "storage": {
+        "vivaworkersS3": {
+            "BucketName": "string",
+            "Region": "string"
+        }
     }
 }

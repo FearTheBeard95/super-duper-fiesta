@@ -42,5 +42,12 @@
         }
       }
     }
+  },
+  "storage": {
+    "vivaworkersS3": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }
