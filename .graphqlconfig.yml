@@ -1,6 +1,6 @@
 projects:
   vivaworkers:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/vivaworkers/build/schema.graphql
     includes:
       - src/graphql/**/*.js
     excludes:
