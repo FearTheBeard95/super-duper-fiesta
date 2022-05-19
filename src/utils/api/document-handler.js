@@ -1,15 +1,6 @@
-import * as queries from '../graphql/queries';
+import * as queries from '../../graphql/queries';
 import { Storage, API, graphqlOperation } from 'aws-amplify';
-import * as mutations from '../graphql/mutations';
-
-export async function deleteDocument(id) {
-  await Storage.remove(document.name);
-  const data = await API.graphql(
-    graphqlOperation(mutations.deleteDocument, { input: { id } })
-  );
-
-  return data;
-}
+import * as mutations from '../../graphql/mutations';
 
 //Handler to create a new document
 export function createDocument(document) {
@@ -30,19 +21,23 @@ export function createDocument(document) {
   });
 }
 
-// export async function updateDocument(id) {
-//   await Storage.put(document.name, document.file);
-//   const file = await Storage.get(document.name);
+// Handler to delete document
+export function deleteDocument(id) {
+  return new Promise(async (res, rej) => {
+    await Storage.remove(document.name);
+    const data = await API.graphql(
+      graphqlOperation(mutations.deleteDocument, { input: { id } })
+    );
 
-//   const data = await API.graphql(graphqlOperation(mutations.updateDocument), {
-//     input: { id },
-//   });
-
-//   return data;
-// }
+    if (data.errors) {
+      rej(data.errors);
+    }
+    res(data);
+  });
+}
 
 // Handler to get all documents from API
-export async function getAllDocuments() {
+export function getAllDocuments() {
   return new Promise(async (res, rej) => {
     const data = await API.graphql(graphqlOperation(queries.listDocuments));
 
@@ -54,7 +49,7 @@ export async function getAllDocuments() {
 }
 
 //Handler to get a single document from API
-export async function getDocument(id) {
+export function getDocument(id) {
   return new Promise(async (res, rej) => {
     const data = await API.graphql(graphqlOperation(queries.getDocument), {
       input: id,
