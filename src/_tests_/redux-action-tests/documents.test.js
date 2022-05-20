@@ -1,9 +1,6 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as documentsAction from '../../redux-store/actions/documents';
-// import config from '../../aws-exports';
-// import Amplify from 'aws-amplify';
-// Amplify.configure(config);
 
 const middlewares = [thunk];
 
