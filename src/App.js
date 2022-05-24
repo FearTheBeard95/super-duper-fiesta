@@ -9,11 +9,11 @@ import {
 } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import './App.css';
-import logo from './logo.svg';
 import React, { Component } from 'react';
 import { Button } from 'antd';
 import { connect } from 'react-redux';
 import { handleReceiveData } from './redux-store/actions/shared';
+import MainLayout from './components/MainLayout';
 
 const components = {
   Header() {
@@ -254,18 +254,7 @@ class App extends Component {
         hideSignUp={false}
       >
         {({ user, signOut }) => (
-          <div className='App'>
-            <header className='App-header'>
-              <img src={logo} className='App-logo' alt='logo' />
-              <p>
-                Hello <code>{user.username}</code>
-                <br />
-                <Button type='primary' onClick={signOut}>
-                  Sign out
-                </Button>
-              </p>
-            </header>
-          </div>
+          <MainLayout page={'Documents'}>Content</MainLayout>
         )}
       </Authenticator>
     );
