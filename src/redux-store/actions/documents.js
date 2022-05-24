@@ -40,11 +40,3 @@ export function receiveDocumentsList(documents) {
     documents,
   };
 }
-
-export function handleReceiveDocumentsList() {
-  return (dispatch) => {
-    return api.getAllDocuments().then((documents) => {
-      dispatch(receiveDocumentsList(documents));
-    });
-  };
-}

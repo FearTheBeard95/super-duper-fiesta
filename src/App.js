@@ -12,6 +12,8 @@ import './App.css';
 import logo from './logo.svg';
 import React, { Component } from 'react';
 import { Button } from 'antd';
+import { connect } from 'react-redux';
+import { handleReceiveData } from './redux-store/actions/shared';
 
 const components = {
   Header() {
@@ -238,7 +240,12 @@ const formFields = {
   },
 };
 
-export default class App extends Component {
+class App extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+
+    dispatch(handleReceiveData());
+  }
   render() {
     return (
       <Authenticator
@@ -264,3 +271,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default connect()(App);

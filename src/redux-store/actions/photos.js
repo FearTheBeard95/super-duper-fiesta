@@ -39,18 +39,9 @@ export function handleRemovePhoto(id) {
 }
 
 // Action to get all photos
-export function getPhotos(photos) {
+export function receivePhotos(photos) {
   return {
     type: RECEIVE_PHOTOS_LIST,
     photos,
-  };
-}
-
-// Action to get all photos from storage and database
-export function handleGetPhotos() {
-  return (dispatch) => {
-    return api.getAllPhotos().then((photos) => {
-      dispatch(getPhotos(photos));
-    });
   };
 }

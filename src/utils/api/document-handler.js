@@ -44,7 +44,7 @@ export function getAllDocuments() {
     if (data.errors) {
       rej(data.errors);
     }
-    res(data.data.listDocuments);
+    res(data.data.listDocuments.items);
   });
 }
 

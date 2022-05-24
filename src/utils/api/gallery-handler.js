@@ -38,7 +38,7 @@ export function getGalleries() {
     if (data.errors) {
       rej(data.errors);
     }
-    res(data.data.listGalleries);
+    res(data.data.listGalleries.items);
   });
 }
 

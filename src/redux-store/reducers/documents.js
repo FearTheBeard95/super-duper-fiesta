@@ -1,9 +1,9 @@
-import { ADD_DOCUMENT } from '../actions/documents';
+import { RECEIVE_DOCUMENTS_LIST } from '../actions/documents';
 
 export default function documents(state = [], action) {
   switch (action.type) {
-    case ADD_DOCUMENT:
-      return [...state, action.document];
+    case RECEIVE_DOCUMENTS_LIST:
+      return [...action.documents];
     default:
       return state;
   }

@@ -42,7 +42,7 @@ export function getAllPhotos() {
     if (data.errors) {
       rej(data.errors);
     }
-    res(data.data);
+    res(data.data.listPhotos.items);
   });
 }
 

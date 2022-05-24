@@ -6,13 +6,6 @@ const middlewares = [thunk];
 
 const mockStore = configureMockStore(middlewares);
 
-const mockServiceCreator =
-  (body, succeeds = true) =>
-  () =>
-    new Promise((resolve, reject) => {
-      setTimeout(() => (succeeds ? resolve(body) : reject(body)), 10);
-    });
-
 describe('Photos actions', () => {
   let store;
   const photo = {};
@@ -45,7 +38,7 @@ describe('Photos actions', () => {
 
   describe('Get photos action', () => {
     it('should fire a get photos action', () => {
-      store.dispatch(photosActions.getPhotos(photos));
+      store.dispatch(photosActions.receivePhotos(photos));
 
       expect(store.getActions()).toContainEqual(
         expect.objectContaining({
