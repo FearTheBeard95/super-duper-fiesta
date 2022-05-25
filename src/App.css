@@ -50,3 +50,8 @@
 .amplify-tabs {
   display: none;
 }
+
+.center {
+  margin: auto;
+  width: 50%;
+}

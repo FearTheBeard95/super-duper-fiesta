@@ -36,7 +36,7 @@ const items = [
   ]),
 ];
 
-const MainLayout = ({ children, page }) => {
+const MainLayout = ({ children, pages }) => {
   const [collapsed, setCollapsed] = useState(false);
   return (
     <Layout
@@ -77,7 +77,9 @@ const MainLayout = ({ children, page }) => {
             }}
           >
             <Breadcrumb.Item>App</Breadcrumb.Item>
-            <Breadcrumb.Item>{page}</Breadcrumb.Item>
+            {pages.map((page, index) => (
+              <Breadcrumb.Item key={index}>{page.name}</Breadcrumb.Item>
+            ))}
           </Breadcrumb>
           <div
             className='site-layout-background'

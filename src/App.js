@@ -14,6 +14,7 @@ import { Button } from 'antd';
 import { connect } from 'react-redux';
 import { handleReceiveData } from './redux-store/actions/shared';
 import MainLayout from './components/MainLayout';
+import AddDocuments from './components/AddDocuments';
 
 const components = {
   Header() {
@@ -253,9 +254,7 @@ class App extends Component {
         components={components}
         hideSignUp={false}
       >
-        {({ user, signOut }) => (
-          <MainLayout page={'Documents'}>Content</MainLayout>
-        )}
+        {({ user, signOut }) => <AddDocuments />}
       </Authenticator>
     );
   }
