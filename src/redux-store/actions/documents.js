@@ -13,10 +13,9 @@ export function addDocument(document) {
 }
 
 export function handleAddDocument(document) {
-  return (dispatch) => {
-    return api.createDocument(document).then((document) => {
-      dispatch(addDocument(document));
-    });
+  return async (dispatch) => {
+    const document_1 = await api.createDocument(document);
+    return dispatch(addDocument(document_1));
   };
 }
 
