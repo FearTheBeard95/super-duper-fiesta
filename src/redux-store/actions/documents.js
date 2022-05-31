@@ -27,9 +27,8 @@ export function removeDocument(id) {
 }
 
 export function handleRemoveDocument(id) {
-  return async (dispatch) => {
-    dispatch(removeDocument(id));
-    return await api.deleteDocument(id);
+  return (dispatch) => {
+    return api.deleteDocument(id).then(() => dispatch(removeDocument(id)));
   };
 }
 

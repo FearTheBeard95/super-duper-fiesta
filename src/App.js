@@ -5,6 +5,7 @@ import { Spin } from 'antd';
 import { connect } from 'react-redux';
 import { handleReceiveData } from './redux-store/actions/shared';
 import AddDocument from './components/AddDocument';
+import ViewDocument from './components/ViewDocument';
 
 class App extends Component {
   state = {
@@ -21,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <Spin spinning={this.state.loading} size='large'>
-        <AddDocument />
+        <ViewDocument />
       </Spin>
     );
   }
