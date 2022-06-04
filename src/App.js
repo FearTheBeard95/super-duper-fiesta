@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { handleReceiveData } from './redux-store/actions/shared';
 import AddDocument from './components/AddDocument';
 import ViewDocument from './components/ViewDocument';
+import AddGallery from './components/AddGallery';
 
 class App extends Component {
   state = {
@@ -22,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <Spin spinning={this.state.loading} size='large'>
-        <ViewDocument />
+        <AddGallery />
       </Spin>
     );
   }
